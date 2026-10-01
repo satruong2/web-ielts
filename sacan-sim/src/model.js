@@ -112,6 +112,7 @@ export function step(state, p, dt) {
       P_wall,
       I_rms,
       PF: p.PF,
+      V_grid: p.V_grid,
       z_mean: z_sum / Ns,
       V_cell_max,
     },

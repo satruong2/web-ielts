@@ -1,0 +1,18 @@
+{
+  "id": "pzem004t_v3",
+  "name": "PZEM-004T v3.0 (lớp đo ở ổ cắm)",
+  "params": {
+    "T_sample": { "value": 1, "unit": "s", "source": "ASSUMED", "ref": "Chu kỳ cập nhật của PZEM chưa xác nhận (báo cáo, mục chưa xác nhận #6); mô phỏng lấy 1 Hz" },
+    "V_res": { "value": 0.1, "unit": "V", "source": "CITED", "ref": "Manual PZEM-004T V3.0 (innovatorsguru), qua báo cáo" },
+    "I_res": { "value": 0.001, "unit": "A", "source": "CITED", "ref": "Manual PZEM-004T V3.0, qua báo cáo" },
+    "P_res": { "value": 0.1, "unit": "W", "source": "CITED", "ref": "Manual PZEM-004T V3.0, qua báo cáo" },
+    "PF_res": { "value": 0.01, "unit": "-", "source": "CITED", "ref": "Manual PZEM-004T V3.0, qua báo cáo" },
+    "E_res": { "value": 1, "unit": "Wh", "source": "CITED", "ref": "Manual PZEM-004T V3.0 (bộ đếm điện năng 1 Wh), SPEC §5" },
+    "I_start": { "value": 0.01, "unit": "A", "source": "CITED", "ref": "Ngưỡng bắt đầu đo dòng, manual PZEM-004T V3.0, qua báo cáo" },
+    "P_start": { "value": 0.4, "unit": "W", "source": "CITED", "ref": "Ngưỡng bắt đầu đo công suất, manual PZEM-004T V3.0, qua báo cáo" },
+    "V_min": { "value": 80, "unit": "V", "source": "CITED", "ref": "Dải đo điện áp 80–260 V, manual PZEM-004T V3.0" },
+    "V_max": { "value": 260, "unit": "V", "source": "CITED", "ref": "Dải đo điện áp 80–260 V, manual PZEM-004T V3.0" },
+    "noise_sigma_rel": { "value": 0.0025, "unit": "-", "source": "ASSUMED", "ref": "Báo cáo coi độ chính xác ±0,5% (CITED) ≈ 2σ; chưa có số đo độc lập" },
+    "loss_prob": { "value": 0.005, "unit": "-", "source": "ASSUMED", "ref": "Báo cáo cho dải 0,1–1% mẫu đọc lỗi; chọn 0,5%" }
+  }
+}

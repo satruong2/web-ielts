@@ -3,7 +3,7 @@
 
 import { MODE, initState, step } from './model.js';
 
-export const CODE_VERSION = '0.1.0-buoc1';
+export const CODE_VERSION = '0.2.0-buoc2';
 
 export const COLUMNS = [
   't_s', // thời điểm đầu khoảng [t, t + dt)
@@ -12,6 +12,7 @@ export const COLUMNS = [
   'I_out_A', // dòng sạc (DC)
   'I_rms_A', // dòng ổ cắm = P_wall / (V_grid · PF)
   'PF',
+  'V_grid_V', // điện áp lưới thật tại ổ cắm
   'soc', // z trung bình các cell (có thể > 1, xem model.js)
   'V_cell_max_V',
   'mode', // 0 = CC, 1 = CV, 2 = đã cắt
@@ -63,6 +64,7 @@ export function simulate(p) {
     rows.I_out_A.push(out.I);
     rows.I_rms_A.push(out.I_rms);
     rows.PF.push(out.PF);
+    rows.V_grid_V.push(out.V_grid);
     rows.soc.push(out.z_mean);
     rows.V_cell_max_V.push(out.V_cell_max);
     rows.mode.push(out.mode);
