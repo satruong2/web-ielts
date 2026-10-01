@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light;
+  --surface: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --grid: #e4e3df;
+  --band: rgba(42, 120, 214, 0.08);
+  --series-lfp: #2a78d6;
+  --series-nmc: #eb6834;
+  --warn-bg: #fff4d6;
+  --warn-border: #c98500;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --surface: #1a1a19;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --grid: #383835;
+    --band: rgba(57, 135, 229, 0.14);
+    --series-lfp: #3987e5;
+    --series-nmc: #d95926;
+    --warn-bg: #3a2e10;
+    --warn-border: #c98500;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --surface: #1a1a19;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --grid: #383835;
+  --band: rgba(57, 135, 229, 0.14);
+  --series-lfp: #3987e5;
+  --series-nmc: #d95926;
+  --warn-bg: #3a2e10;
+  --warn-border: #c98500;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text-primary);
+  font: 15px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+main { max-width: 960px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 22px; margin: 16px 0 4px; }
+h2 { font-size: 16px; margin: 24px 0 8px; }
+.sub, .note { color: var(--text-secondary); margin: 0 0 8px; font-size: 14px; }
+.disclaimer {
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--warn-bg);
+  border-left: 4px solid var(--warn-border);
+  border-radius: 4px;
+  font-weight: 600;
+}
+.chart { width: 100%; }
+.uplot, .u-legend { color: var(--text-primary); font-family: inherit; }
+.u-legend { font-size: 13px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--grid); }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text-secondary); font-weight: 600; }
+.swatch { display: inline-block; width: 12px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }

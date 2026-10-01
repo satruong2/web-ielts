@@ -1,0 +1,36 @@
+{
+  "id": "lfp_16s_20ah",
+  "name": "LFP 16S 20 Ah",
+  "params": {
+    "Ns": { "value": 16, "unit": "cell", "source": "CITED", "ref": "16S LFP: Soner 48V 12Ah LFP (soner.vn)" },
+    "V_cv_cell": { "value": 3.65, "unit": "V", "source": "CITED", "ref": "BU-409: 3,65 V/cell cho LFP" },
+    "V_cv_pack": { "value": 58.4, "unit": "V", "source": "CITED", "ref": "Soner: 58,4 V; khớp 16 × 3,65 V (DERIVED)" },
+    "Q_Ah": { "value": 20, "unit": "Ah", "source": "ASSUMED", "ref": "Lựa chọn thiết kế trong báo cáo (gần gói 60 V 20 Ah của FSRI)" },
+    "I_cc": { "value": 5, "unit": "A", "source": "ASSUMED", "ref": "0,25C; Soner cho tối đa 0,5C (CITED); VinFast trung bình 288 W (DERIVED)" },
+    "I_cut": { "value": 1.0, "unit": "A", "source": "DERIVED", "ref": "5% × 20 Ah, cận trên dải 3–5% Ah của BU-409; ngưỡng thật của bộ sạc rẻ chưa có nguồn" },
+    "R0_cell": { "value": 0.0015, "unit": "ohm", "source": "DERIVED", "ref": "7–24 mΩ × 2,5 Ah / 20 Ah = 0,9–3,0 mΩ (Onori, Stanford); quy tắc R×Ah = hằng số là ASSUMED; chọn 1,5 mΩ" },
+    "R1_cell": { "value": 0.001, "unit": "ohm", "source": "ASSUMED", "ref": "Dải đo 4–503 mΩ trên một cell 2,5 Ah (Onori), quá rộng; báo cáo chọn 1,0 mΩ" },
+    "tau1": { "value": 30, "unit": "s", "source": "ASSUMED", "ref": "Dải đo 12–108 s (Onori); ví dụ PyBaMM cũng dùng 30 s" },
+    "rc2_enabled": { "value": false, "unit": "bool", "source": "ASSUMED", "ref": "SPEC §7: nhánh RC thứ hai là tùy chọn, mặc định tắt" },
+    "R2_cell": { "value": null, "unit": "ohm", "source": "ASSUMED", "ref": "Báo cáo không có giá trị nào cho R2; phải hỏi người dùng trước khi bật RC2" },
+    "tau2": { "value": null, "unit": "s", "source": "CITED", "ref": "Chỉ có dải 180–8070 s trên một cell LFP 26650 (Onori); chưa chọn giá trị" },
+    "ocv": {
+      "value": {
+        "soc": [0, 0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95, 1.00],
+        "v":   [2.90, 3.20, 3.25, 3.29, 3.31, 3.32, 3.33, 3.33, 3.34, 3.35, 3.38, 3.45, 3.63]
+      },
+      "unit": "V theo SOC (0–1)",
+      "source": "ASSUMED",
+      "ref": "Bảng OCV nhánh sạc hiệu dụng của báo cáo. Hình dạng (LFP phẳng) có bằng chứng định tính; con số là giả định. 95% và 100% đã được tác giả sửa để mô hình vào được CV"
+    },
+    "ocv_ext": {
+      "value": {
+        "soc": [1.02, 1.05, 1.10],
+        "v":   [3.70, 3.85, 4.20]
+      },
+      "unit": "V theo z (biến trạng thái mô hình)",
+      "source": "ASSUMED",
+      "ref": "Phần mở rộng trên 100% của báo cáo, chỉ minh họa. z > 1 là BIẾN CỦA MÔ HÌNH, không phải SOC vật lý: với bảng OCV ở trên, LFP chỉ chạm 3,65 V/cell ở z ≈ 1,002 khi sạc 5 A"
+    }
+  }
+}

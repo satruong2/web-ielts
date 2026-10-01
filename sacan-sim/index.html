@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SạcAn-Sim</title>
+    <link rel="stylesheet" href="/src/ui/style.css" />
+  </head>
+  <body>
+    <main class="viz-root">
+      <p class="disclaimer" role="note">
+        Số liệu mô phỏng dựa trên giả định, chưa hiệu chỉnh bằng dữ liệu thật.
+      </p>
+      <h1>Công suất ổ cắm theo thời gian</h1>
+      <p class="sub">
+        Bước 1 · sạc bình thường · pack 20 Ah, CC 5 A, cắt 1,0 A, SOC đầu 10% · bộ sạc tốt 300 W ·
+        chưa có nhiễu PZEM
+      </p>
+
+      <section>
+        <h2>Cả phiên sạc</h2>
+        <p class="note">Nét đứt: lúc vào CV và lúc cắt (nhãn ở biểu đồ phóng to bên dưới). Rê chuột để đọc số.</p>
+        <div id="chart-full" class="chart"></div>
+      </section>
+
+      <section>
+        <h2>Phóng to cuối phiên: khuỷu, đuôi CV và standby</h2>
+        <div id="chart-tail" class="chart"></div>
+        <p class="note">
+          Vùng tô nhạt: LFP đang sạc với biến trạng thái z &gt; 1. Đây là biến của mô hình, không phải pin chứa
+          hơn 100% điện: bảng OCV (ASSUMED) chỉ chạm 3,65 V/cell khi z ≈ 1,002.
+        </p>
+      </section>
+
+      <section>
+        <h2>Các mốc chính</h2>
+        <table id="events"></table>
+      </section>
+    </main>
+    <script type="module" src="/src/ui/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "sacan-sim",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mô phỏng sạc xe máy điện lithium, số liệu như PZEM đo ở ổ cắm",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vite": "^6.4.3",
+    "vitest": "^3.2.7"
+  },
+  "dependencies": {
+    "uplot": "^1.6.32"
+  }
+}

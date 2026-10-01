@@ -1,0 +1,14 @@
+{
+  "id": "session_default",
+  "name": "Phiên sạc mặc định (Bước 1)",
+  "params": {
+    "soc0": { "value": 0.10, "unit": "SOC (0–1)", "source": "ASSUMED", "ref": "Báo cáo: SOC đầu 10–50%; phép thử của tác giả dùng 10%" },
+    "v1_0": { "value": 0, "unit": "V", "source": "ASSUMED", "ref": "Pin đã nghỉ đủ lâu nên điện áp phân cực bằng 0 lúc bắt đầu" },
+    "dt": { "value": 1, "unit": "s", "source": "DERIVED", "ref": "SPEC §3; phép thử của tác giả: nghiệm chính xác, Euler, RK4 trùng nhau ở dt = 1 s" },
+    "R_c_dc": { "value": 0, "unit": "ohm", "source": "ASSUMED", "ref": "Tiếp xúc DC lý tưởng ở trường hợp bình thường (đã chốt với người dùng, điểm F)" },
+    "V_grid": { "value": 220, "unit": "V", "source": "CITED", "ref": "Điện áp danh định, TT 39/2015/TT-BCT; Bước 1 giữ cố định" },
+    "t_standby_after": { "value": 600, "unit": "s", "source": "ASSUMED", "ref": "Chạy thêm 10 phút ở standby sau khi cắt để thấy trên biểu đồ" },
+    "t_max": { "value": 43200, "unit": "s", "source": "ASSUMED", "ref": "Giới hạn an toàn 12 giờ để vòng lặp không chạy mãi" },
+    "seed": { "value": 20261001, "unit": "-", "source": "ASSUMED", "ref": "Hạt giống RNG để tái lập; Bước 1 chưa có nhiễu nên chưa dùng tới" }
+  }
+}
